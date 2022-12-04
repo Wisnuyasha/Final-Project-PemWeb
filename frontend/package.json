@@ -15,7 +15,7 @@
     "flowbite": "^1.5.3",
     "pinia": "^2.0.23",
     "prettier": "^2.7.1",
-    "sweetalert2": "^11.6.14",
+    "sweetalert2": "^11.6.15",
     "tailwind": "^4.0.0",
     "tailwindcss-neumorphism": "^0.1.0",
     "vue": "^3.2.41",

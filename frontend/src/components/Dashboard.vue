@@ -13,13 +13,17 @@
         />
         <!-- Left Menu -->
         <div class="hidden space-x-8 font-bold lg:flex">
-          <a href="#" class="text-grayishViolet hover:text-veryDarkViolet"
+          <a
+            href="#shortenIT"
+            class="text-grayishViolet hover:text-veryDarkViolet"
             >Short-IT</a
           >
-          <a href="#" class="text-grayishViolet hover:text-veryDarkViolet"
+          <a
+            href="#tech-stack"
+            class="text-grayishViolet hover:text-veryDarkViolet"
             >Tech Stack</a
           >
-          <a href="#" class="text-grayishViolet hover:text-veryDarkViolet"
+          <a href="#about" class="text-grayishViolet hover:text-veryDarkViolet"
             >About Us</a
           >
         </div>
@@ -29,15 +33,18 @@
       <div
         class="hidden items-center space-x-6 font-bold text-grayishViolet lg:flex"
       >
-        <button 
-        @click="$router.push('/login')"
-        class="hover:text-veryDarkViolet">
-          Login</button>
+        <button
+          @click="$router.push('/login')"
+          class="hover:text-veryDarkViolet"
+        >
+          Login
+        </button>
         <button
           @click="$router.push('/')"
           class="px-8 py-3 font-bold text-white bg-blue-700 rounded-full hover:opacity-70"
-          >Sign Up</button
         >
+          Sign Up
+        </button>
       </div>
 
       <!-- Hamburger Button -->
@@ -63,12 +70,18 @@
         <a href="#" class="w-full text-center">Short-IT</a>
         <a href="#" class="w-full text-center">About Us</a>
         <a href="#" class="w-full text-center">Tech Stack</a>
-        <button @click="$router.push('/login')" class="w-full pt-6 border-t border-gray-400 text-center"
-        >Login</button
+        <button
+          @click="$router.push('/login')"
+          class="w-full pt-6 border-t border-gray-400 text-center"
         >
-        <button @click="$router.push('/')" class="w-full py-3 text-center rounded-full bg-blue-700"
-          >Sign Up</button
+          Login
+        </button>
+        <button
+          @click="$router.push('/')"
+          class="w-full py-3 text-center rounded-full bg-blue-700"
         >
+          Sign Up
+        </button>
       </div>
     </div>
   </nav>
@@ -104,7 +117,7 @@
   </section>
 
   <!-- Shorten Section -->
-  <section id="shorten" class="relative bg-blue-100">
+  <section id="shortenIT" class="relative bg-blue-100">
     <!-- Shorten Container -->
     <div class="max-w-4xl mx-auto p-6 space-y-6">
       <!-- Form -->
@@ -129,7 +142,7 @@
         />
 
         <button
-          @click="((App.addLinks(App.input.links)))" 
+          @click="App.addLinks(App.input.links)"
           class="px-10 py-3 text-white bg-blue-700 rounded-lg hover:bg-blue-700Light focus:outline-none md:py-2"
         >
           Shorten It!
@@ -143,18 +156,21 @@
       </form>
 
       <!-- Link 1 -->
-      <div v-for="link in App.links" :key="link.id"
+      <div
+        v-for="link in App.links"
+        :key="link.id"
         class="flex flex-col items-center justify-between w-full p-6 bg-white rounded-lg md:flex-row"
       >
         <p class="font-bold text-center text-veryDarkViolet md:text-left">
-          {{link.rawlinks}}
+          {{ link.rawlinks }}
         </p>
 
         <div
           class="flex flex-col items-center justify-end flex-1 space-x-4 space-y-2 md:flex-row md:space-y-0"
         >
           <div class="font-bold text-cyan">
-            https://short.IT/{{link.customlinks}}</div>
+            https://short.IT/{{ link.customlinks }}
+          </div>
           <button
             class="p-2 px-8 text-white bg-blue-700 rounded-lg hover:opacity-70 focus:outline-none"
           >
@@ -217,7 +233,7 @@
   </section>
 
   <!-- Feature Box Section -->
-  <section id="Short-IT" class="pb-32 bg-gray-100">
+  <section id="about" class="pb-32 bg-gray-100">
     <div
       class="relative container flex flex-col items-start px-6 mx-auto md:flex-row md:space-x-7"
     >
@@ -298,45 +314,46 @@
 
   <section class="mt-32" id="download">
     <div class="container mx-auto px-6">
-      <h2 class="mb-6 text-3xl font-semibold text-center md:text-4xl">
+      <h2 class="mb-6 text-8xl font-semibold text-center md:text-4xl">
         Tech Stack
       </h2>
-      <p class="max-w-lg mx-auto text-center text-grayishBlue">
-        We've got more browsers in the pipeline. Please do let us know if you've
-        got a favourite you'd like us to prioritize.
+      <p class="max-w-lg text-2xl mx-auto text-center text-grayishBlue">
+        The Frameworks we use for this website
       </p>
     </div>
   </section>
 
   <!-- Download Boxes -->
-  <section id="download-boxes" class="py-32">
+  <section id="tech-stack" class="py-32">
     <!-- Boxes Container -->
     <div
       class="relative flex flex-col items-center max-w-5xl mx-auto space-y-10 px-10 md:px-6 md:space-y-0 md:space-x-7 md:flex-row"
     >
       <!-- Box 1 -->
-      <div
-        class="flex flex-col w-full py-6 space-y-4 text-center rounded-lg shadow-lg md:w-1/3"
-      >
-        <!-- Image -->
-        <div class="flex justify-center">
-          <img
-            class="w-28 h-28"
-            src="https://avatars.githubusercontent.com/u/6128107?s=200&v=4"
-            alt=""
-          />
-        </div>
-        <!-- Text -->
-        <h5 class="pt-6 text-xl font-bold">VueJS 3</h5>
-        <p class="text-gray-400">Javascript Framework</p>
+      <div class="w-full md:w-1/3">
+        <div
+          class="flex flex-col w-full py-6 space-y-4 text-center rounded-lg shadow-lg md:mt-8"
+        >
+          <!-- Image -->
+          <div class="flex justify-center">
+            <img
+              class="w-28 h-28"
+              src="https://avatars.githubusercontent.com/u/6128107?s=200&v=4"
+              alt=""
+            />
+          </div>
+          <!-- Text -->
+          <h5 class="pt-6 text-xl font-bold">VueJS</h5>
+          <p class="text-gray-400">Javascript Framework</p>
 
-        <!-- Dots -->
-        <div class="bg-dots bg-repeat-x px-6 pt-6 capitalize">
-          <a
-            href="#"
-            class="block w-full py-3 text-white duration-200 border-2 rounded-lg bg-blue-700 hover:text-blue-700 hover:bg-white border-blue-700"
-            >Documentation</a
-          >
+          <!-- Dots -->
+          <div class="bg-dots bg-repeat-x px-6 pt-6 capitalize">
+            <a
+              href="https://vuejs.org/guide/introduction.html"
+              class="block w-full py-3 text-white duration-200 border-2 rounded-lg bg-blue-700 hover:text-blue-700 hover:bg-white border-blue-700"
+              >Documentation</a
+            >
+          </div>
         </div>
       </div>
 
@@ -360,7 +377,7 @@
           <!-- Dots -->
           <div class="bg-dots bg-repeat-x px-6 pt-6 capitalize">
             <a
-              href="#"
+              href="https://tailwindcss.com/docs/installation"
               class="block w-full py-3 text-white duration-200 border-2 rounded-lg bg-blue-700 hover:text-blue-700 hover:bg-white border-blue-700"
               >Documentation</a
             >
@@ -388,7 +405,7 @@
           <!-- Dots -->
           <div class="bg-dots bg-repeat-x px-6 pt-6 capitalize">
             <a
-              href="#"
+              href="https://expressjs.com/"
               class="block w-full py-3 text-white duration-200 border-2 rounded-lg bg-blue-700 hover:text-blue-700 hover:bg-white border-blue-700"
               >Documentation</a
             >
@@ -413,9 +430,15 @@
           class="mb-1 w-20 h-20"
         />
 
-        <a href="#features" class="uppercase hover:text-softRed">ShortIT</a>
-        <a href="#download" class="uppercase hover:text-softRed">Tech Stack</a>
-        <a href="#faq" class="uppercase hover:text-softRed">About Us</a>
+        <a href="#shortIT" class="uppercase text-zinc-50 hover:text-red-500"
+          >ShortIT</a
+        >
+        <a href="#tech-stack" class="uppercase text-zinc-50 hover:text-red-500"
+          >Tech Stack</a
+        >
+        <a href="#about" class="uppercase text-zinc-50 hover:text-red-500"
+          >About Us</a
+        >
       </div>
 
       <!-- Social Container -->
@@ -438,7 +461,7 @@
     </div>
   </footer>
 
-<!-- <div class="h-screen w-screen flex bg-slate-200">
+  <!-- <div class="h-screen w-screen flex bg-slate-200">
   <div class="h-full flex-col w-1/3 grid grid-rows-3 items-center">
     <div class="w-full flex flex-col gap-1">
         <h1 class="m-auto font-semibold text-2xl">Welcome,</h1>
@@ -466,21 +489,20 @@
         </ul>
     </div>
 </div> -->
-  </template>
-  
-  <script>
-  import {useApp} from '../stores/index';
+</template>
 
-  export default {
-    components: {
-    },
-    setup() {
-      const App = useApp();
-      return {
-        App,
-      }
-    },
-    mounted() {
+<script>
+import { useApp } from "../stores/index";
+
+export default {
+  components: {},
+  setup() {
+    const App = useApp();
+    return {
+      App,
+    };
+  },
+  mounted() {
     const btn = document.getElementById("menu-btn");
     const menu = document.getElementById("menu");
 
@@ -527,8 +549,7 @@
         alert("Success");
       }
     }
-      this.App.getlinks()
-    }
-  }
-  </script>
-  
+    this.App.getlinks();
+  },
+};
+</script>
