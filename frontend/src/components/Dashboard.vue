@@ -32,7 +32,7 @@
         <button
           @click="$router.push('/login')"
           class="hover:text-veryDarkViolet"
-        >
+        >                 
           Login
         </button>
         <button
@@ -164,13 +164,15 @@
         <div
           class="flex flex-col items-center justify-end flex-1 space-x-4 space-y-2 md:flex-row md:space-y-0"
         >
-          <div class="font-bold text-cyan">
-            https://short.IT/{{ link.customlinks }}
-          </div>
+          <button 
+            @click="$router.push({name: 'shorten', params: { custom: link.customlinks }})"
+            class="font-bold text-cyan">
+            localhost:5173/{{ link.customlinks }}
+          </button>
           <button
-            class="p-2 px-8 text-white bg-blue-700 rounded-lg hover:opacity-70 focus:outline-none"
-          >
-            Copy
+          @click="$router.push({name: 'edit', params: { id: link.rawlinks }})"
+            class="p-2 px-8 text-white bg-blue-700 rounded-lg hover:opacity-70 focus:outline-none">
+            Edit
           </button>
         </div>
       </div>

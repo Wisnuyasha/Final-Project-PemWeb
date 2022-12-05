@@ -110,7 +110,7 @@ export const useApp = defineStore({
     },
 
     async editLinks(links) {
-      await axios.patch('http://127.0.0.1:3000/users/' + links.id, user)
+      await axios.patch('http://127.0.0.1:3000/links/' + links.id, user)
       .then((response) => {
         if(response.status) {
           Swal.fire({
@@ -130,8 +130,6 @@ export const useApp = defineStore({
           showConfirmButton: false,
         });
       });
-      this.closeEditUserMenu();
     }
-    
   },
 });

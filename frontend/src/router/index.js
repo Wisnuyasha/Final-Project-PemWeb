@@ -1,8 +1,4 @@
 import { createRouter, createWebHistory } from "vue-router";
-import RegisterView from "../components/Register.vue";
-import LoginView from "../components/Login.vue"
-import DashboardView from "../components/Dashboard.vue"
-import EditView from "../components/EditLinks.vue"
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -10,22 +6,27 @@ const router = createRouter({
     {
       path: "/",
       name: "register",
-      component: RegisterView,
+      component: () => import('../components/Register.vue'),
     },
     {
       path: "/login",
       name: "login",
-      component: LoginView
+      component: () => import('../components/Login.vue'),
     },
     {
       path: "/dashboard",
       name: "dashboard",
-      component: DashboardView
+      component: () => import('../components/Dashboard.vue'),
     },
     {
       path: "/edit/:id",
       name: "edit",
-      component: EditView
+      component: () => import('../components/EditLinks.vue'),
+    },
+    {
+      path: "/:custom",
+      name: "shorten",
+      component: () => import('../components/Shorten.vue'),
     },
   ],
 });
