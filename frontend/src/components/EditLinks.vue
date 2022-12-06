@@ -4,6 +4,28 @@
       class="flex flex-col w-full gap-3 justify-center items-center text-neutral-700"
     >
       <div class="bg-slate-50 rounded-md p-11 xl:w-4/12 lg:w-5/12 sm:w-6/12">
+        <button
+          type="button"
+          @click="$router.push('/dashboard')"
+          class="text-black-700"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
+            />
+          </svg>
+
+          <span class="sr-only">Icon description</span>
+        </button>
         <h1 class="font-bold text-2xl flex justify-center">Edit Link</h1>
         <h1 class="text-sm text-slate-400 mt-1 flex justify-center">
           You can edit your link or your custom back-half.
@@ -55,6 +77,7 @@
         </button> -->
         <button
           type="button"
+          @click="$router.push('/dashboard')"
           class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         >
           <svg
