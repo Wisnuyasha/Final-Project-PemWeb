@@ -59,7 +59,7 @@
             <div class="mt-8 grid gap-3 grid-cols-1">
             <div>
                 <label for="name" class="font-semibold">Name</label>
-                <input placeholder="Enter your name" type="text" name="name" id="name" v-model="App.input.user.name" class="h-9 mt-1 border-slate-300 rounded w-full bg-gray-50 "/>
+                <input placeholder="Enter your name" type="text" name="name" id="name" v-model="App.input.user.name" class="h-9 mt-1 border-slate-300 rounded w-full bg-gray-50 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"/>
             </div>
             <div>
                 <label for="email" class="font-semibold">Email</label>

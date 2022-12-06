@@ -122,11 +122,12 @@
         class="relative flex flex-col w-full p-10 -mt-20 space-y-4 bg-blue-500 rounded-lg md:flex-row md:space-y-0 md:space-x-3"
       >
         <input
-          type="text"
+          type="url"
           v-model="App.input.links.rawlinks"
           class="flex-1 p-3 border-2 rounded-lg focus:outline-none"
           placeholder="Input your link"
           id="link-input"
+          required
         />
 
         <input
@@ -138,6 +139,7 @@
         />
 
         <button
+          type="submit"
           @click="App.addLinks(App.input.links)"
           class="px-10 py-3 text-white bg-blue-700 rounded-lg hover:bg-blue-700Light focus:outline-none md:py-2"
         >
@@ -170,7 +172,7 @@
             localhost:5173/{{ link.customlinks }}
           </button>
           <button
-          @click="$router.push({name: 'edit', params: { id: link.rawlinks }})"
+          @click="$router.push({name: 'edit', params: { id: link.id }})"
             class="p-2 px-8 text-white bg-blue-700 rounded-lg hover:opacity-70 focus:outline-none">
             Edit
           </button>

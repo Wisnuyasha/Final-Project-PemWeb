@@ -7,11 +7,11 @@
             <div class="mt-8 grid gap-3 grid-cols-1">
             <div>
                 <label for="email" class="font-semibold">Email</label>
-                <input placeholder="Enter your email" type="text" name="email" id="email" v-model="App.input.user.email" class="h-9 border-slate-300 mt-1 rounded w-full bg-gray-50 active:outline-indigo-700"/>
+                <input placeholder="Enter your email" type="text" name="email" id="email" v-model="App.input.user.email" class="h-9 border-slate-300 mt-1 rounded w-full bg-gray-50 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"/>
             </div>
             <div>
                 <label for="password" class="font-semibold">Password</label>
-                <input placeholder="Enter your password" type="password" name="name" id="name" v-model="App.input.user.password" class="h-9 mt-1 border-slate-300 rounded w-full bg-gray-50"/>
+                <input placeholder="Enter your password" type="password" name="name" id="name" v-model="App.input.user.password" class="h-9 mt-1 border-slate-300 rounded w-full bg-gray-50 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"/>
             </div>
             <div class="mt-3 text-sm text-center">
                 <button @click="((App.addUser(App.input.user))), $router.push('/dashboard')" class="py-2 w-full font-semibold rounded-md text-slate-50 bg-indigo-500 active:bg-indigo-600">Submit</button>

@@ -28,7 +28,8 @@ export const useApp = defineStore({
     },
     input: {
       user: {},
-      links: {}
+      links: {},
+      editlink: {}
     },
     links: [],
   }),
@@ -62,6 +63,9 @@ export const useApp = defineStore({
     },
 
     async addLinks(links) {
+      if( !links.customlinks&& !links.rawlinks ){
+        return
+      }
       await axios.post('http://127.0.0.1:3000/links', {
         rawlinks: links.rawlinks,
         customlinks: links.customlinks
@@ -110,12 +114,12 @@ export const useApp = defineStore({
     },
 
     async editLinks(links) {
-      await axios.patch('http://127.0.0.1:3000/links/' + links.id, user)
+      await axios.patch('http://127.0.0.1:3000/links/' + links.id, links)
       .then((response) => {
         if(response.status) {
           Swal.fire({
             title: 'Success!',
-            text: `Succesesfully update user ${user.nama}`,
+            text: `Succesesfully update user ${links.nama}`,
             icon: 'success',
             timer: 1500,
             showConfirmButton: false,
@@ -124,12 +128,38 @@ export const useApp = defineStore({
       }, (error) => {
         Swal.fire({
           title: 'Error!',
-          text: `Seems like there is an error while updating user ${user.nama}<br>${error}`,
+          text: `Seems like there is an error while updating user ${links.nama}<br>${error}`,
           icon: 'error',
           timer: 1500,
           showConfirmButton: false,
         });
       });
-    }
+    },
+
+    async deleteLinks(linksid) {
+      await axios.delete('http://127.0.0.1:3000/links/' + linksid)
+      .then((response) => {
+        this.input.links = {};
+        if(response.status) {
+          Swal.fire({
+            title: 'Success!',
+            text: `Succesesfully delete user `,
+            icon: 'success',
+            timer: 1500,
+            showConfirmButton: false,
+          });
+        }
+      }, (error) => {
+        Swal.fire({
+          title: 'Error!',
+          text: `Seems like there is an error while deleting user <br>${error}`,
+          icon: 'error',
+          timer: 1500,
+          showConfirmButton: false,
+        });
+      }
+      );
+    },
+
   },
 });

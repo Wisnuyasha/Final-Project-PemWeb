@@ -7,20 +7,22 @@
             <h1 class="text-sm text-slate-400 mt-1 flex justify-center">
                 You can edit your link or your custom back-half.</h1>
             <div class="mt-8 grid gap-3 grid-cols-1">
-            <div>
-                <label class="font-semibold">Destination</label>
-                <input placeholder="Enter your raw link" type="text" v-model="App.input.user.email" class="h-9 border-slate-300 mt-1 rounded w-full bg-gray-50 active:outline-indigo-700"/>
-            </div>
-            <div>
-                <label class="font-semibold">Custom back-half</label>
-                <input placeholder="Enter your custom link" type="password" v-model="App.input.user.password" class="h-9 mt-1 border-slate-300 rounded w-full bg-gray-50"/>
-            </div>
-            <div class="mt-3 text-sm flex flex-row gap-4 text-center">
-                <button class="py-2 w-1/2 font-semibold rounded-md text-slate-50 bg-indigo-500 active:bg-indigo-600">
-                    Delete</button>
-                <button class="py-2 w-1/2 font-semibold rounded-md text-slate-50 bg-indigo-500 active:bg-indigo-600">
-                    Update</button>
-            </div>
+                <div>
+                    <label class="font-semibold">Destination</label>
+                    <input placeholder="Enter your raw link" type="text" v-model="App.input.editlink.rawlinks" class="h-9 border-slate-300 mt-1 rounded w-full bg-gray-50 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"/>
+                </div>
+                <div>
+                    <label class="font-semibold">Custom back-half</label>
+                    <input placeholder="Enter your custom link" type="text" v-model="App.input.editlink.customlinks" class="h-9 mt-1 border-slate-300 rounded w-full bg-gray-50 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"/>
+                </div>
+                <div class="mt-3 text-sm flex flex-row gap-4 text-center">
+                    <button @click="App.deleteLinks(App.input.editlink.id), $router.push('/dashboard')"
+                    class="py-2 w-1/2 font-semibold rounded-md text-slate-50 bg-indigo-500 active:bg-indigo-600">
+                        Delete</button>
+                    <button @click="App.editLinks(App.input.editlink)"
+                    class="py-2 w-1/2 font-semibold rounded-md text-slate-50 bg-indigo-500 active:bg-indigo-600">
+                        Update</button>
+                </div>
             </div>
         </div>
         <div class="justify-center grid">
@@ -40,7 +42,16 @@
         App,
       }
     },
+    mounted() {
+        this.App.links.forEach((link)=>{
+            if(this.$route.params.id == link.id) {
+                this.App.input.editlink = link
+            }
+        }
+        )
+    },
     created() {
+
     }
   }
 </script>
