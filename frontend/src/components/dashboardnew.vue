@@ -25,10 +25,31 @@
               class="h-9 bg-slate-100 border-none mt-1 rounded-md w-full bg-gw focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
             />
             <div class="mt-2">
-              <label for="email" class="font-semibold mr-28">Our Domain</label>
-              <label for="email" class="font-semibold ml-2"
-                >Custom back-half</label
-              >
+              <div class="flex flex-row">
+                <label for="email" class="font-semibold mr-2"
+                  >Our Domain
+                </label>
+                <div class="flex items-center justify-end">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-[1.2rem] h-[1.2rem] flex items-center justify-center mb-0"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"
+                    />
+                  </svg>
+                </div>
+
+                <label for="email" class="font-semibold ml-24"
+                  >Custom back-half</label
+                >
+              </div>
             </div>
             <div class="flex">
               <input
