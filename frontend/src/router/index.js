@@ -6,27 +6,32 @@ const router = createRouter({
     {
       path: "/",
       name: "register",
-      component: () => import('../components/Register.vue'),
+      component: () => import("../components/Register.vue"),
     },
     {
       path: "/login",
       name: "login",
-      component: () => import('../components/Login.vue'),
+      component: () => import("../components/Login.vue"),
     },
     {
       path: "/dashboard",
       name: "dashboard",
-      component: () => import('../components/Dashboard.vue'),
+      component: () => import("../components/Dashboard.vue"),
+    },
+    {
+      path: "/dbnew",
+      name: "dbnew",
+      component: () => import("../components/dashboardnew.vue"),
     },
     {
       path: "/edit/:id",
       name: "edit",
-      component: () => import('../components/EditLinks.vue'),
+      component: () => import("../components/EditLinks.vue"),
     },
     {
       path: "/:custom",
       name: "shorten",
-      component: () => import('../components/Shorten.vue'),
+      component: () => import("../components/Shorten.vue"),
     },
   ],
 });
