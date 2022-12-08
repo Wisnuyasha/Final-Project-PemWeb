@@ -1,6 +1,7 @@
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, } from "firebase/auth";
+
 
 const firebaseConfig = {
     apiKey: "AIzaSyCrTEi_2gQOwalsdfohki2eDu9oYisRrRA",

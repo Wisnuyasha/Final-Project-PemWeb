@@ -36,7 +36,7 @@
                     viewBox="0 0 24 24"
                     stroke-width="1.5"
                     stroke="currentColor"
-                    class="w-[1.2rem] h-[1.2rem] flex items-center justify-center mb-0"
+                    class="w-[1.1rem] h-[1.1rem] flex items-center justify-center mb-0"
                   >
                     <path
                       stroke-linecap="round"
@@ -98,11 +98,11 @@
             </div>
           </div>
           <div class="flex gap-4 items-center text-xs">
-            <div>clickcount+icon</div>
+            <div>69+icon</div>
             <!-- Copy Button -->
             <button
-              class="inline-flex items-center justify-center w-10 h-10 mr-2 text-gray-900 transition-colors duration-15 rounded-full focus:shadow-outline hover:text-blue-600"
-              @click=""
+              class="inline-flex items-center justify-center text-gray-600 transition-colors duration-15 rounded-full focus:shadow-outline hover:text-indigo-600"
+              
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -122,7 +122,7 @@
             <!-- ini masih bingung soalnya gangerti cara kerja fungsi copynya gimana -->
             <!-- EDIT BUTTON -->
             <button
-              class="inline-flex items-center justify-center w-10 h-10 mr-2 text-gray-900 transition-colors duration-15 rounded-full focus:shadow-outline hover:text-blue-600"
+              class="inline-flex items-center justify-center text-gray-600 transition-colors duration-15 rounded-full focus:shadow-outline hover:text-indigo-600"
               @click="$router.push({ name: 'edit', params: { id: link.id } })"
             >
               <svg
@@ -143,10 +143,8 @@
             <!-- DELETE BUTTON -->
             <button
               @click="
-                App.deleteLinks(App.input.editlink.id),
-                  $router.push('/dashboard')
-              "
-              class="py-2 font-semibold rounded-md text-gray-900 bg-white hover:text-red-600 active:bg-indigo-600"
+                App.deleteLinks(App.input.editlink.id)"
+              class="py-2 font-semibold rounded-md text-gray-600 bg-white hover:text-pink-500 active:bg-indigo-600"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -181,7 +179,7 @@ export default {
     };
   },
   created() {
-    this.App.getlinks();
+    this.App.getLinks();
   },
 };
 </script>

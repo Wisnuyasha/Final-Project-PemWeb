@@ -14,9 +14,7 @@
             <input
               placeholder="Enter your email"
               type="text"
-              name="email"
-              id="email"
-              v-model="App.input.user.email"
+              v-model="App.email"
               class="h-9 border-slate-300 mt-1 rounded w-full bg-gray-50 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
             />
           </div>
@@ -25,18 +23,16 @@
             <input
               placeholder="Enter your password"
               type="password"
-              name="name"
-              id="name"
-              v-model="App.input.user.password"
+              v-model="App.password"
               class="h-9 mt-1 border-slate-300 rounded w-full bg-gray-50 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
             />
           </div>
           <div class="mt-3 text-sm text-center">
             <button
-              @click="App.addUser(App.input.user), $router.push('/dashboard')"
+              @click="App.login(App.email, App.password)"
               class="py-2 w-full font-semibold rounded-md text-slate-50 bg-indigo-500 active:bg-indigo-600"
             >
-              Submit
+              Login
             </button>
           </div>
         </div>

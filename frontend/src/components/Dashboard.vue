@@ -30,16 +30,10 @@
         class="hidden items-center space-x-6 font-bold text-grayishViolet lg:flex"
       >
         <button
-          @click="$router.push('/login')"
-          class="hover:text-veryDarkViolet"
-        >                 
-          Login
-        </button>
-        <button
-          @click="$router.push('/')"
+          @click="App.logout()"
           class="px-8 py-3 font-bold text-white bg-blue-700 rounded-full hover:opacity-70"
         >
-          Sign Up
+          Log out
         </button>
       </div>
 
@@ -537,10 +531,13 @@ export default {
       } else {
         errMsg.innerHTML = "";
         input.classList.remove("border-red");
-        alert("Success");
+
       }
     }
-    this.App.getlinks();
+    this.App.getLinks();
   },
+  beforeMount() {
+    this.App.check();
+  }
 };
 </script>
