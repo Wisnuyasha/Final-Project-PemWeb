@@ -1,19 +1,17 @@
 import { defineStore } from "pinia";
 import axios from "axios";
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, onSnapshot } from "firebase/firestore";
+import { getFirestore} from "firebase/firestore";
 import Swal from "sweetalert2";
 import router from "/src/router"
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, } from "firebase/auth";
-
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCrTEi_2gQOwalsdfohki2eDu9oYisRrRA",
-  authDomain: "finalproject-39ef0.firebaseapp.com",
-  projectId: "finalproject-39ef0",
-  storageBucket: "finalproject-39ef0.appspot.com",
-  messagingSenderId: "685269585631",
-  appId: "1:685269585631:web:f7b35e21113f6b143c636a",
+  apiKey: "AIzaSyCHkFCbUsFso03_CCXRBCCyqA0d3_LnItk",
+  authDomain: "vuelogin-6ef3e.firebaseapp.com",
+  projectId: "vuelogin-6ef3e",
+  storageBucket: "vuelogin-6ef3e.appspot.com",
+  messagingSenderId: "645060518477",
+  appId: "1:645060518477:web:35fe6a4137d2565137f204"
 };
 
 const app = initializeApp(firebaseConfig);
@@ -39,7 +37,6 @@ export const useApp = defineStore({
           password: password,
         })
         .then((response) => {
-          console.log(response);
           if (response.status) {
             Swal.fire({
               title: "Success!",
@@ -70,10 +67,9 @@ export const useApp = defineStore({
         })
         .then(
           (response) => {
-            console.log(response);
+            // console.log(response);
             const accountId = response.data;
             localStorage.setItem("userToken", accountId);
-
             if (response.status) {
               Swal.fire({
                 title: "Success!",
@@ -112,7 +108,6 @@ export const useApp = defineStore({
           (response) => {
             console.log(response);
             localStorage.removeItem("userToken");
-
             if (response.status) {
               Swal.fire({
                 title: "Success!",
@@ -162,7 +157,7 @@ export const useApp = defineStore({
           (error) => {
             Swal.fire({
               title: "Error!",
-              text: `Seems like there is an error while adding user ${links.rawlinks} ${error}`,
+              text: `Seems like there is an error while adding link ${links.rawlinks} ${error}`,
               icon: "error",
               timer: 1500,
               showConfirmButton: false,
@@ -182,11 +177,10 @@ export const useApp = defineStore({
           const links = response.data
           this.links = []
           this.links.push(...response.data)
-          console.log(this.links)
-          console.log("berhasil ges")
+          // console.log("berhasil")
       })
       .catch((err) => {
-          console.log("error ngepush link ke array")
+          // console.log("gagal")
           console.log(err)
       })
   },
@@ -197,7 +191,7 @@ export const useApp = defineStore({
           if (response.status) {
             Swal.fire({
               title: "Success!",
-              text: `Succesesfully update user ${links.nama}`,
+              text: `Succesesfully update link ${links.nama}`,
               icon: "success",
               timer: 1500,
               showConfirmButton: false,
@@ -207,7 +201,7 @@ export const useApp = defineStore({
         (error) => {
           Swal.fire({
             title: "Error!",
-            text: `Seems like there is an error while updating user ${links.nama}<br>${error}`,
+            text: `Seems like there is an error while updating link ${links.nama} ${error}`,
             icon: "error",
             timer: 1500,
             showConfirmButton: false,
@@ -223,7 +217,7 @@ export const useApp = defineStore({
           if (response.status) {
             Swal.fire({
               title: "Success!",
-              text: `Succesesfully delete user `,
+              text: `Succesesfully delete link `,
               icon: "success",
               timer: 1500,
               showConfirmButton: false,
@@ -234,7 +228,7 @@ export const useApp = defineStore({
         (error) => {
           Swal.fire({
             title: "Error!",
-            text: `Seems like there is an error while deleting user <br>${error}`,
+            text: `Seems like there is an error while deleting link ${error}`,
             icon: "error",
             timer: 1500,
             showConfirmButton: false,
