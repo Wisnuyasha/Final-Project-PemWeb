@@ -16,7 +16,7 @@ export default {
   },
   created() {
     let url = ""
-    this.App.getlinks().then(() => {
+    this.App.getLinks().then(() => {
         this.App.links.forEach((link)=>{
             // console.log(link)
             if(this.$route.params.custom == link.customlinks) {
@@ -26,7 +26,7 @@ export default {
         console.log(url)
         window.location.href = url
     })
-    this.App.getlinks();
+    this.App.getLinks();
   },
 };
 </script>

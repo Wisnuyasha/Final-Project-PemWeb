@@ -1,32 +1,40 @@
 <template>
-  <div class="flex flex-row bg-gray-50">
+  <div class="flex flex-row bg-white">
     <!-- Left Side -->
-    <aside class="w-64 h-full" aria-label="Sidebar">
+    <aside class="w-1/4 h-full" aria-label="Sidebar">
       <div
-        class="overflow-y-auto py-4 px-3 bg-gray-50 rounded dark:bg-gray-800 h-full"
+        class="overflow-y-auto py-4 px-3 bg-white rounded dark:bg-gray-800 h-full"
       >
-        <a href="#" class="flex items-center pl-2.5 mb-5">
-          <img
-            src="https://www.its.ac.id/it/wp-content/uploads/sites/46/2021/11/logo-DTI-border1.png"
-            class="mr-3 h-6 sm:h-7"
-            alt="Flowbite Logo"
-          />
+        <a href="#" class="flex items-center ml-2 pl-2.5 mb-5">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="w-8 h-8"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M2.25 6a3 3 0 013-3h13.5a3 3 0 013 3v12a3 3 0 01-3 3H5.25a3 3 0 01-3-3V6zm3.97.97a.75.75 0 011.06 0l2.25 2.25a.75.75 0 010 1.06l-2.25 2.25a.75.75 0 01-1.06-1.06l1.72-1.72-1.72-1.72a.75.75 0 010-1.06zm4.28 4.28a.75.75 0 000 1.5h3a.75.75 0 000-1.5h-3z"
+              clip-rule="evenodd"
+            />
+          </svg>
+
           <span
-            class="self-center text-xl font-bold whitespace-nowrap dark:text-white"
+            class="self-center ml-3 text-xl font-bold whitespace-nowrap dark:text-white"
             >IRA Dev's</span
           >
         </a>
-        <ul class="space-y-2">
+        <ul class="space-y-2 mt-7">
           <li>
             <a
-              href="#"
-              class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-indigo-500 hover:text-white dark:hover:bg-gray-700"
+              @click="$router.push('/home')"
+              class="flex cursor-pointer items-center mx-3 p-2 text-base font-normal text-slate-600 rounded-lg dark:text-white hover:bg-indigo-500 hover:text-white dark:hover:bg-gray-700"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke-width="1.5"
+                stroke-width="1.7"
                 stroke="currentColor"
                 class="w-5 h-5"
               >
@@ -37,19 +45,19 @@
                 />
               </svg>
 
-              <span class="ml-3">Dashboard</span>
+              <span class="ml-3 font-semibold">Home</span>
             </a>
           </li>
           <li>
             <a
               href="#"
-              class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-indigo-500 hover:text-white dark:hover:bg-gray-700"
+              class="flex items-center mx-3 p-2 text-base font-normal text-slate-600 rounded-lg dark:text-white hover:bg-indigo-500 hover:text-white dark:hover:bg-gray-700"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke-width="1.5"
+                stroke-width="1.7"
                 stroke="currentColor"
                 class="w-5 h-5"
               >
@@ -60,19 +68,21 @@
                 />
               </svg>
 
-              <span class="flex-1 ml-3 whitespace-nowrap">About Us</span>
+              <span class="flex-1 ml-3 font-semibold whitespace-nowrap"
+                >About Us</span
+              >
             </a>
           </li>
           <li>
             <a
               href="#"
-              class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-indigo-500 hover:text-white dark:hover:bg-gray-700"
+              class="flex items-center mx-3 p-2 text-base font-normal text-slate-600 rounded-lg dark:text-white hover:bg-indigo-500 hover:text-white dark:hover:bg-gray-700"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke-width="1.5"
+                stroke-width="1.7"
                 stroke="currentColor"
                 class="w-5 h-5"
               >
@@ -83,23 +93,25 @@
                 />
               </svg>
 
-              <span class="flex-1 ml-3 whitespace-nowrap">Tech Stack</span>
+              <span class="flex-1 ml-3 font-semibold whitespace-nowrap"
+                >Tech Stack</span
+              >
             </a>
           </li>
         </ul>
         <ul
-          class="pt-4 mt-4 space-y-2 border-t border-gray-200 dark:border-gray-700"
+          class="pt-4 mt-4 space-y-2 mx-3 border-t border-gray-200 dark:border-gray-700"
         >
           <li>
             <a
-              href="#"
-              class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-indigo-500 hover:text-white dark:hover:bg-gray-700"
+              @click="$router.push('/login')"
+              class="flex cursor-pointer items-center p-2 text-base font-normal text-slate-600 rounded-lg dark:text-white hover:bg-indigo-500 hover:text-white dark:hover:bg-gray-700"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke-width="1.5"
+                stroke-width="1.7"
                 stroke="currentColor"
                 class="w-6 h-6"
               >
@@ -109,19 +121,21 @@
                   d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75"
                 />
               </svg>
-              <span class="flex-1 ml-3 whitespace-nowrap">Login</span>
+              <span class="flex-1 ml-3 font-semibold whitespace-nowrap"
+                >Login</span
+              >
             </a>
           </li>
           <li>
             <a
-              href="#"
-              class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-indigo-500 hover:text-white dark:hover:bg-gray-700"
+              @click="$router.push('/')"
+              class="flex cursor-pointer items-center p-2 text-base font-normal text-slate-600 rounded-lg dark:text-white hover:bg-indigo-500 hover:text-white dark:hover:bg-gray-700"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke-width="1.5"
+                stroke-width="1.7"
                 stroke="currentColor"
                 class="w-5 h-5"
               >
@@ -131,21 +145,23 @@
                   d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125"
                 />
               </svg>
-              <span class="flex-1 ml-3 whitespace-nowrap">Sign Up</span>
+              <span class="flex-1 ml-3 font-semibold whitespace-nowrap"
+                >Sign Up</span
+              >
             </a>
           </li>
 
           <!-- Logout -->
           <li>
             <a
-              href="#"
-              class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-indigo-500 hover:text-white dark:hover:bg-gray-700"
+              @click="App.logout()"
+              class="flex cursor-pointer items-center p-2 text-base font-normal text-slate-600 rounded-lg dark:text-white hover:bg-indigo-500 hover:text-white dark:hover:bg-gray-700"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke-width="1.5"
+                stroke-width="1.7"
                 stroke="currentColor"
                 class="w-6 h-6"
               >
@@ -155,7 +171,9 @@
                   d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"
                 />
               </svg>
-              <span class="flex-1 ml-3 whitespace-nowrap">Logout</span>
+              <span class="flex-1 ml-3 font-semibold whitespace-nowrap"
+                >Logout</span
+              >
             </a>
           </li>
         </ul>
@@ -171,7 +189,7 @@
             <p class="text-3xl font-bold text-gray-600">Dashboard</p>
           </div>
           <div
-            class="flex flex-col gap-4 ml-14 mb-6 mt-10 px-11 py-6 rounded-3xl bg-white h-7/12 w-4/5 drop-shadow-sm"
+            class="flex flex-col gap-4 ml-14 mb-11 mt-10 px-11 py-6 rounded-3xl bg-white h-7/12 w-4/5 drop-shadow-sm"
           >
             <div class="">
               <h1 class="font-bold text-2xl flex text-gray-600">
@@ -201,7 +219,7 @@
                       viewBox="0 0 24 24"
                       stroke-width="1.5"
                       stroke="currentColor"
-                      class="w-[1.2rem] h-[1.2rem] flex items-center justify-center mb-0"
+                      class="w-[1.1rem] h-[1.1rem] flex items-center justify-center mb-0"
                     >
                       <path
                         stroke-linecap="round"
@@ -211,7 +229,7 @@
                     </svg>
                   </div>
 
-                  <label for="email" class="font-semibold ml-24"
+                  <label for="email" class="font-semibold ml-[8.5rem]"
                     >Custom back-half</label
                   >
                 </div>
@@ -234,17 +252,34 @@
                 />
                 <button
                   @click="App.addLinks(App.input.links)"
-                  class="h-9 w-3/12 ml-4 mt-1 font-semibold rounded-md text-slate-50 bg-indigo-500 active:bg-indigo-600"
+                  class="h-9 w-3/12 ml-4 mt-1 font-semibold rounded-md text-slate-50 bg-indigo-500 hover:bg-indigo-600 active:bg-indigo-700"
                 >
                   Submit
                 </button>
               </div>
             </div>
           </div>
+          <div class="flex flex-row ml-11">
+            <svg
+              class="h-9 w-9 flex items-center text-indigo-500"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"
+              />
+              <line x1="8" y1="12" x2="16" y2="12" />
+            </svg>
+            <p class="text-3xl ml-2 mb-4 font-bold text-slate-600">Links</p>
+          </div>
           <div
             v-for="link in App.links"
             :key="link.id"
-            class="flex justify-between ml-14 mt-4 px-11 py-7 rounded-xl bg-white h-7/12 w-4/5 drop-shadow-sm"
+            class="flex justify-between ml-14 mt-6 px-11 py-7 rounded-xl bg-white h-7/12 w-4/5 drop-shadow-sm"
           >
             <div class="flex flex-col">
               <h1 class="font-bold text-xl flex text-gray-600">
@@ -263,17 +298,17 @@
               </div>
             </div>
             <div class="flex gap-4 items-center text-xs">
-              <div>clickcount+icon</div>
+              <div class="mr-3">23+icon</div>
               <!-- Copy Button -->
               <button
-                class="inline-flex items-center justify-center w-10 h-10 mr-2 text-gray-900 transition-colors duration-15 rounded-full focus:shadow-outline hover:text-blue-600"
-                @click=""
+                class="inline-flex items-center justify-center text-slate-700 transition-colors duration-15 rounded-full focus:shadow-outline hover:text-indigo-600"
+                @click="s"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
-                  stroke-width="1.5"
+                  stroke-width="1.7"
                   stroke="currentColor"
                   class="w-5 h-5"
                 >
@@ -287,14 +322,14 @@
               <!-- ini masih bingung soalnya gangerti cara kerja fungsi copynya gimana -->
               <!-- EDIT BUTTON -->
               <button
-                class="inline-flex items-center justify-center w-10 h-10 mr-2 text-gray-900 transition-colors duration-15 rounded-full focus:shadow-outline hover:text-blue-600"
+                class="inline-flex items-center justify-center text-slate-700 transition-colors duration-15 rounded-full focus:shadow-outline hover:text-indigo-600"
                 @click="$router.push({ name: 'edit', params: { id: link.id } })"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
-                  stroke-width="1.5"
+                  stroke-width="1.7"
                   stroke="currentColor"
                   class="w-5 h-5"
                 >
@@ -307,17 +342,14 @@
               </button>
               <!-- DELETE BUTTON -->
               <button
-                @click="
-                  App.deleteLinks(App.input.editlink.id),
-                    $router.push('/dashboard')
-                "
-                class="py-2 font-semibold rounded-md text-gray-900 bg-white hover:text-red-600 active:bg-indigo-600"
+                @click="App.deleteLinks(link.id)"
+                class="py-2 font-semibold rounded-md text-slate-700 bg-white hover:text-pink-500"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
-                  stroke-width="1.5"
+                  stroke-width="1.7"
                   stroke="currentColor"
                   class="w-5 h-5"
                 >

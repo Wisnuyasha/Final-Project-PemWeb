@@ -99,7 +99,7 @@ export const useApp = defineStore({
 
     check() {
       if (localStorage.getItem("userToken") != null) {
-        router.push("/dashboard");
+        router.push("/home");
       } else {
         return;
       }
@@ -228,6 +228,7 @@ export const useApp = defineStore({
               timer: 1500,
               showConfirmButton: false,
             });
+            this.getLinks();
           }
         },
         (error) => {

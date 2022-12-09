@@ -49,16 +49,7 @@
               class="h-9 mt-1 border-slate-300 rounded w-full bg-gray-50 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
             />
           </div>
-          <div class="mt-3 text-sm flex flex-row gap-4 text-center">
-            <button
-              @click="
-                App.deleteLinks(App.input.editlink.id),
-                  $router.push('/dashboard')
-              "
-              class="py-2 w-1/2 font-semibold rounded-md text-slate-50 bg-pink-500 active:bg-indigo-600"
-            >
-              Delete
-            </button>
+          <div class="mt-3 text-sm flex justify-center">
             <button
               @click="App.editLinks(App.input.editlink)"
               class="py-2 w-1/2 font-semibold rounded-md text-slate-50 bg-indigo-500 active:bg-indigo-600"

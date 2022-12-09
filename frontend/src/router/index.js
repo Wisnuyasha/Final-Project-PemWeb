@@ -14,13 +14,13 @@ const router = createRouter({
       component: () => import("../components/Login.vue"),
     },
     {
-      path: "/dashboard",
-      name: "dashboard",
+      path: "/home",
+      name: "home",
       component: () => import("../components/Dashboard.vue"),
     },
     {
-      path: "/dbnew",
-      name: "dbnew",
+      path: "/dashboard",
+      name: "dashboard",
       component: () => import("../components/dashboardnew.vue"),
     },
     {
