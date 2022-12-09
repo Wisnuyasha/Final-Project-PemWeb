@@ -1,11 +1,12 @@
 <template>
-  <div class="flex flex-row bg-white">
-    <!-- Left Side -->
-    <aside class="w-1/4 h-full" aria-label="Sidebar">
-      <div
-        class="overflow-y-auto py-4 px-3 bg-white rounded dark:bg-gray-800 h-full"
-      >
-        <a href="#" class="flex items-center ml-2 pl-2.5 mb-5">
+  <div class="flex flex-row bg-white font-rubik text-gray-800">
+    <!-- Left Sidebar-->
+    <aside class="w-1/4 h-full sticky top-0" aria-label="Sidebar">
+      <div>
+        <a
+          href="#"
+          class="flex items-center pl-6 pt-5 pb-8 text-slate-50 bg-indigo-500"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -24,7 +25,11 @@
             >IRA Dev's</span
           >
         </a>
-        <ul class="space-y-2 mt-7">
+      </div>
+      <div
+        class="overflow-y-auto py-2 px-3 bg-white rounded dark:bg-gray-800 h-full"
+      >
+        <ul class="mt-2">
           <li>
             <a
               @click="$router.push('/home')"
@@ -50,7 +55,7 @@
           </li>
           <li>
             <a
-              href="#"
+              @click="$router.push('/home')"
               class="flex items-center mx-3 p-2 text-base font-normal text-slate-600 rounded-lg dark:text-white hover:bg-indigo-500 hover:text-white dark:hover:bg-gray-700"
             >
               <svg
@@ -75,7 +80,7 @@
           </li>
           <li>
             <a
-              href="#"
+              @click="$router.push('/home')"
               class="flex items-center mx-3 p-2 text-base font-normal text-slate-600 rounded-lg dark:text-white hover:bg-indigo-500 hover:text-white dark:hover:bg-gray-700"
             >
               <svg
@@ -184,22 +189,35 @@
     <div class="flex h-full w-full">
       <div class="flex w-full">
         <div class="w-full h-full flex flex-col bg-slate-100">
-          <div class="flex-row flex mt-16 ml-14">
-            <p class="text-3xl font-extrabold mr-3 text-indigo-500">#</p>
-            <p class="text-3xl font-bold text-gray-600">Dashboard</p>
+          <div class="flex-row flex mt-16 ml-14 items-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="3.7"
+              stroke="currentColor"
+              class="w-6 h-6 text-indigo-500"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M5.25 8.25h15m-16.5 7.5h15m-1.8-13.5l-3.9 19.5m-2.1-19.5l-3.9 19.5"
+              />
+            </svg>
+            <p class="text-3xl ml-4 font-bold text-gray-800">Dashboard</p>
           </div>
           <div
             class="flex flex-col gap-4 ml-14 mb-11 mt-10 px-11 py-6 rounded-3xl bg-white h-7/12 w-4/5 drop-shadow-sm"
           >
             <div class="">
-              <h1 class="font-bold text-2xl flex text-gray-600">
+              <h1 class="font-bold text-2xl flex text-gray-800">
                 Shorten Links
               </h1>
               <h1 class="text-sm text-gray-500">
                 Input your destination link and custom back-half
               </h1>
             </div>
-            <div class="text-gray-600 flex flex-col">
+            <div class="text-gray-800 flex flex-col">
               <label for="email" class="font-semibold">Destination</label>
               <input
                 placeholder="Enter your destination link"
@@ -229,7 +247,9 @@
                     </svg>
                   </div>
 
-                  <label for="email" class="font-semibold ml-[8.5rem]"
+                  <label
+                    for="email"
+                    class="font-semibold ml-[0.5rem] md:ml-[1rem] lg:ml-[2.9rem] xl:ml-[7rem] 2xl:ml-[6rem]"
                     >Custom back-half</label
                   >
                 </div>
@@ -259,9 +279,11 @@
               </div>
             </div>
           </div>
-          <div class="flex flex-row ml-11">
+
+          <!-- Links -->
+          <div class="flex flex-row ml-14 items-end">
             <svg
-              class="h-9 w-9 flex items-center text-indigo-500"
+              class="h-8 w-8 items-end justify-end text-indigo-500"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -274,7 +296,9 @@
               />
               <line x1="8" y1="12" x2="16" y2="12" />
             </svg>
-            <p class="text-3xl ml-2 mb-4 font-bold text-slate-600">Links</p>
+            <p class="text-3xl items-center ml-2 font-bold text-slate-600">
+              Links
+            </p>
           </div>
           <div
             v-for="link in App.links"
@@ -282,7 +306,7 @@
             class="flex justify-between ml-14 mt-6 px-11 py-7 rounded-xl bg-white h-7/12 w-4/5 drop-shadow-sm"
           >
             <div class="flex flex-col">
-              <h1 class="font-bold text-xl flex text-gray-600">
+              <h1 class="font-bold text-xl flex text-gray-800">
                 {{ link.customlinks }}
               </h1>
               <div
@@ -362,6 +386,54 @@
               </button>
             </div>
           </div>
+          <footer
+            class="p-4 bg-white rounded-lg shadow md:px-6 md:py-8 dark:bg-gray-900"
+          >
+            <div class="sm:flex sm:items-center sm:justify-between">
+              <a
+                @click="$router.push('/home')"
+                class="flex items-center mb-4 sm:mb-0"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="w-10 h-10"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M2.25 6a3 3 0 013-3h13.5a3 3 0 013 3v12a3 3 0 01-3 3H5.25a3 3 0 01-3-3V6zm3.97.97a.75.75 0 011.06 0l2.25 2.25a.75.75 0 010 1.06l-2.25 2.25a.75.75 0 01-1.06-1.06l1.72-1.72-1.72-1.72a.75.75 0 010-1.06zm4.28 4.28a.75.75 0 000 1.5h3a.75.75 0 000-1.5h-3z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <span
+                  class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
+                  >IRA Team</span
+                >
+              </a>
+              <ul
+                class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"
+              >
+                <li>
+                  <a
+                    @click="$router.push('/dashboard')"
+                    class="mr-4 hover:underline md:mr-6"
+                    >Home</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <hr
+              class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8"
+            />
+            <span
+              class="block text-sm text-gray-500 sm:text-center dark:text-gray-400"
+              >© 2022
+              <a @click="$router.push('/home')" class="hover:underline"
+                >IRA devs™</a
+              >
+            </span>
+          </footer>
         </div>
       </div>
     </div>

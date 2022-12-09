@@ -6,9 +6,11 @@ module.exports = {
     "./node_modules/flowbite/**/*.js",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        rubik: ["Rubik", "sans-serif"],
+      },
+    },
   },
-  plugins: [
-    require('flowbite/plugin', 'tailwindcss-neumorphism'), 
-  ],
-}
+  plugins: [require("flowbite/plugin", "tailwindcss-neumorphism")],
+};

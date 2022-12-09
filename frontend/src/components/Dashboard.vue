@@ -1,6 +1,6 @@
 <template>
   <!-- Nav Container -->
-  <nav class="relative container mx-auto p-6">
+  <nav class="relative container mx-auto p-6 font-rubik">
     <!-- Flex Container For All Items -->
     <div class="flex items-center justify-between">
       <!-- Flex Container For Logo/Menu -->
@@ -13,7 +13,9 @@
         />
         <!-- Left Menu -->
         <div class="hidden space-x-8 font-bold lg:flex">
-          <a href="#shortenIT" class="text-grayishViolet hover:text-gray-500"
+          <a
+            @click="$router.push('/dashboard')"
+            class="text-grayishViolet hover:text-gray-500 cursor-pointer"
             >Short-IT</a
           >
           <a href="#tech-stack" class="text-grayishViolet hover:text-gray-500"
@@ -57,7 +59,9 @@
       <div
         class="flex flex-col items-center justify-center w-full space-y-6 font-bold text-white rounded-sm"
       >
-        <a href="#" class="w-full text-center">Short-IT</a>
+        <a @click="$router.push('/dashboard')" class="w-full text-center"
+          >Short-IT</a
+        >
         <a href="#" class="w-full text-center">About Us</a>
         <a href="#" class="w-full text-center">Tech Stack</a>
         <button
@@ -79,7 +83,9 @@
   <!-- Hero Section -->
   <section id="hero">
     <!-- Hero Container -->
-    <div class="container flex flex-col-reverse mx-auto p-6 lg:flex-row">
+    <div
+      class="container flex flex-col-reverse mx-auto p-6 lg:flex-row font-rubik"
+    >
       <!-- Content Container -->
       <div class="flex flex-col space-y-10 mb-44 lg:mt-16 lg:w-1/2 xl:mb-52">
         <h1
@@ -92,7 +98,7 @@
         </p>
         <div class="mx-auto lg:mx-0">
           <a
-            href="#"
+            @click="$router.push('/dashboard')"
             class="py-5 px-10 text-2xl font-bold text-white bg-blue-700 rounded-full lg:py-4 hover:opacity-70"
             >Get Started</a
           >
@@ -160,14 +166,21 @@
         <div
           class="flex flex-col items-center justify-end flex-1 space-x-4 space-y-2 md:flex-row md:space-y-0"
         >
-          <button 
-            @click="$router.push({name: 'shorten', params: { custom: link.customlinks }})"
-            class="font-bold text-cyan">
+          <button
+            @click="
+              $router.push({
+                name: 'shorten',
+                params: { custom: link.customlinks },
+              })
+            "
+            class="font-bold text-cyan"
+          >
             localhost:5173/{{ link.customlinks }}
           </button>
           <button
-          @click="$router.push({name: 'edit', params: { id: link.id }})"
-            class="p-2 px-8 text-white bg-blue-700 rounded-lg hover:opacity-70 focus:outline-none">
+            @click="$router.push({ name: 'edit', params: { id: link.id } })"
+            class="p-2 px-8 text-white bg-blue-700 rounded-lg hover:opacity-70 focus:outline-none"
+          >
             Edit
           </button>
         </div>
@@ -442,7 +455,7 @@
     <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
     <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400"
       >© 2022
-      <a href="https://flowbite.com/" class="hover:underline">IRA devs™</a>
+      <a href="" class="hover:underline">IRA devs™</a>
     </span>
   </footer>
 
@@ -531,13 +544,12 @@ export default {
       } else {
         errMsg.innerHTML = "";
         input.classList.remove("border-red");
-
       }
     }
     this.App.getLinks();
   },
   beforeMount() {
     this.App.check();
-  }
+  },
 };
 </script>
