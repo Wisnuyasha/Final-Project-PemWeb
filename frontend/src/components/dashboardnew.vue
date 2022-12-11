@@ -159,8 +159,83 @@
             </svg>
             <p class="text-3xl ml-4 font-bold text-gray-800">Dashboard</p>
           </div>
+
+          <!-- Stats -->
+          <div class="flex flex-row w-full mt-8 space-x-4 justify-start ml-14">
+            <!-- Box 1 -->
+            <div
+              class="inline-block align-bottom bg-indigo-600 hover:bg-indigo-500 rounded-xl text-left overflow-hidden shadow transform transition-all mb-4 w-[39.3%] sm:my-8"
+            >
+              <div class="p-5">
+                <div class="flex flex-row">
+                  <div
+                    class="text-center sm:mt-0 sm:ml-2 sm:text-left space=x-2"
+                  >
+                    <h3 class="text-sm leading-6 font-medium text-white">
+                      Total Links
+                    </h3>
+                    <p class="text-5xl font-bold text-white">4</p>
+                  </div>
+                  <div
+                    class="text-white flex ml-72 justify-center items-center"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-6 h-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Box 2 -->
+            <div
+              class="inline-block align-bottom bg-indigo-600 hover:bg-indigo-500 rounded-xl text-left overflow-hidden shadow transform transition-all mb-4 w-[39.3%] sm:my-8"
+            >
+              <div class="p-5">
+                <div class="flex flex-row">
+                  <div
+                    class="text-center sm:mt-0 sm:ml-2 sm:text-left space=x-2"
+                  >
+                    <h3 class="text-sm leading-6 font-medium text-white">
+                      Total Click
+                    </h3>
+                    <p class="text-5xl font-bold text-white">17</p>
+                  </div>
+                  <div
+                    class="text-white flex ml-72 justify-center items-center"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="w-8 h-8"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M12 1.5a.75.75 0 01.75.75V4.5a.75.75 0 01-1.5 0V2.25A.75.75 0 0112 1.5zM5.636 4.136a.75.75 0 011.06 0l1.592 1.591a.75.75 0 01-1.061 1.06l-1.591-1.59a.75.75 0 010-1.061zm12.728 0a.75.75 0 010 1.06l-1.591 1.592a.75.75 0 01-1.06-1.061l1.59-1.591a.75.75 0 011.061 0zm-6.816 4.496a.75.75 0 01.82.311l5.228 7.917a.75.75 0 01-.777 1.148l-2.097-.43 1.045 3.9a.75.75 0 01-1.45.388l-1.044-3.899-1.601 1.42a.75.75 0 01-1.247-.606l.569-9.47a.75.75 0 01.554-.68zM3 10.5a.75.75 0 01.75-.75H6a.75.75 0 010 1.5H3.75A.75.75 0 013 10.5zm14.25 0a.75.75 0 01.75-.75h2.25a.75.75 0 010 1.5H18a.75.75 0 01-.75-.75zm-8.962 3.712a.75.75 0 010 1.061l-1.591 1.591a.75.75 0 11-1.061-1.06l1.591-1.592a.75.75 0 011.06 0z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dashboard -->
           <div
-            class="flex flex-col gap-4 ml-14 mb-11 mt-10 px-11 py-6 rounded-3xl bg-white h-7/12 w-4/5 drop-shadow-sm"
+            class="flex flex-col gap-4 ml-14 mb-11 px-11 py-6 rounded-3xl bg-white h-7/12 w-4/5 drop-shadow-sm"
           >
             <div class="">
               <h1 class="font-bold text-2xl flex text-gray-800">
