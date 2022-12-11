@@ -177,7 +177,7 @@
                     <p class="text-5xl font-bold text-white">4</p>
                   </div>
                   <div
-                    class="text-white flex ml-72 justify-center items-center"
+                    class="text-white flex ml-72 xl:ml-60 2xl:ml-96 justify-center items-center"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -213,7 +213,7 @@
                     <p class="text-5xl font-bold text-white">17</p>
                   </div>
                   <div
-                    class="text-white flex ml-72 justify-center items-center"
+                    class="text-white flex ml-72 2xl:ml-96 justify-center items-center"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
