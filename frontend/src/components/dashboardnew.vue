@@ -354,7 +354,7 @@
               <!-- Copy Button -->
               <button
                 class="inline-flex items-center justify-center text-slate-700 transition-colors duration-15 rounded-full focus:shadow-outline hover:text-indigo-600"
-                @click="s"
+                @click="App.copy(link.customlinks)"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
