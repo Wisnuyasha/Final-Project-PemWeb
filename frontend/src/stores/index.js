@@ -1,9 +1,11 @@
 import { defineStore } from "pinia";
 import axios from "axios";
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
+import { getFirestore, collection, onSnapshot, query, where, doc } from "firebase/firestore";
 import Swal from "sweetalert2";
 import router from "/src/router";
+import 'firebase/compat/firestore';
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCHkFCbUsFso03_CCXRBCCyqA0d3_LnItk",
@@ -22,12 +24,13 @@ export const useApp = defineStore({
   state: () => ({
     email: "",
     password: "",
+    url: window.location.href,
     input: {
       user: {},
       links: {},
       editlink: {},
     },
-    links: [],
+    links: []
   }),
   actions: {
     async register(email, password) {
@@ -38,7 +41,7 @@ export const useApp = defineStore({
         })
         .then(
           (response) => {
-            if (response.status) {
+            if (response.data.code == "auth/invalid-email") {
               Swal.fire({
                 title: "Success!",
                 text: `Succesesfully added user ${email}`,
@@ -47,6 +50,18 @@ export const useApp = defineStore({
                 showConfirmButton: false,
               });
               router.push("/login");
+              document.getElementById('validation').innerHTML = "Invalid email format"
+            }
+            else if(response.data.code == "auth/email-already-in-use") {
+              Swal.fire({
+                title: "Error!",
+                text: `Seems like there is an error while adding ${email} ${error}`,
+                icon: "error",
+                timer: 1500,
+                showConfirmButton: false,
+              });
+              router.push("/register")
+              document.getElementById('validation').innerHTML = "Email is not available"
             }
           },
           (error) => {
@@ -70,7 +85,7 @@ export const useApp = defineStore({
           (response) => {
             // console.log(response);
             const accountId = response.data;
-            localStorage.setItem("userToken", accountId);
+            localStorage.setItem('userToken', accountId)
             if (response.status) {
               Swal.fire({
                 title: "Success!",
@@ -80,6 +95,51 @@ export const useApp = defineStore({
                 showConfirmButton: false,
               });
               router.push("/dashboard");
+            }
+            else if(response.data.code == "auth/wrong-password") {
+            Swal.fire({
+              title: "Error!",
+              text: `Seems like there is an error while login ${email} ${error}`,
+              icon: "error",
+              timer: 1500,
+              showConfirmButton: false,
+            });
+            router.push("/login")
+            document.getElementById('validation').innerHTML = "Wrong password"
+            console.log(document.getElementById)
+            }
+            else if(response.data.code == "auth/user-not-found") {
+            Swal.fire({
+              title: "Error!",
+              text: `Seems like there is an error while login ${email} ${error}`,
+              icon: "error",
+              timer: 1500,
+              showConfirmButton: false,
+            });
+            router.push("/login")
+            document.getElementById('validation').innerHTML = "No registered email found"
+            }
+            else if(response.data.code == "auth/network-request-failed") {
+            Swal.fire({
+              title: "Error!",
+              text: `Seems like there is an error while login ${email} ${error}`,
+              icon: "error",
+              timer: 1500,
+              showConfirmButton: false,
+            });
+            router.push("/login")
+            document.getElementById('validation').innerHTML = "Wrong password"
+            }
+            else if(response.data.code == "auth/invalid-email") {
+            Swal.fire({
+              title: "Error!",
+              text: `Seems like there is an error while login ${email} ${error}`,
+              icon: "error",
+              timer: 1500,
+              showConfirmButton: false,
+            });
+            router.push("/login")
+            document.getElementById('validation').innerHTML = "Invalid email"
             }
           },
           (error) => {
@@ -131,6 +191,11 @@ export const useApp = defineStore({
     },
 
     async addLinks(links) {
+      // let result = rawlinks.includes("https://")
+      // if (result == false) {
+      //     router.push('/dashboard')
+      //     document.getElementById('validation').innerHTML = "Please enter a valid URL (include a https:// in the beginning of the link)"
+      // }
       if (!links.customlinks && !links.rawlinks) {
         return;
       }
@@ -174,10 +239,10 @@ export const useApp = defineStore({
         })
         .then((response) => {
           console.log(response);
-          const links = response.data;
-          this.links = [];
-          this.links.push(...response.data);
-          // console.log("berhasil")
+          const links = response.data
+          this.links = []
+          this.links.push(...response.data)
+          console.log("berhasil")
         })
         .catch((err) => {
           // console.log("gagal")
@@ -238,12 +303,21 @@ export const useApp = defineStore({
         }
       );
     },
+
     copy(links) {
       try {
-        navigator.clipboard.writeText("localhost:5137/" + links);
+        navigator.clipboard.writeText("localhost:5173/" + links);
       } catch (e) {
         throw e;
       }
     },
+
+    async check(url) {
+      const redLink = await axios.get("http://localhost:3000/api/redirectlink?url="+url)
+      .then((response)=>{
+          window.location.replace(response.data)
+      })
+    },
+
   },
 });

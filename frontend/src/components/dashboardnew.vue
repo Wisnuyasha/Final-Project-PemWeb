@@ -350,7 +350,7 @@
               </div>
             </div>
             <div class="flex gap-4 items-center text-xs">
-              <div class="mr-3">23+icon</div>
+              <div class="mr-3">{{ link.click }}</div>
               <!-- Copy Button -->
               <button
                 class="inline-flex items-center justify-center text-slate-700 transition-colors duration-15 rounded-full focus:shadow-outline hover:text-indigo-600"

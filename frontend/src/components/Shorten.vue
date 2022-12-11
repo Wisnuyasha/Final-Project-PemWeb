@@ -15,18 +15,21 @@ export default {
     };
   },
   created() {
-    let url = ""
-    this.App.getLinks().then(() => {
-        this.App.links.forEach((link)=>{
-            // console.log(link)
-            if(this.$route.params.custom == link.customlinks) {
-                url = link.rawlinks
-            }
-        })
-        console.log(url)
-        window.location.href = url
-    })
-    this.App.getLinks();
+    this.App.check(this.$route.params.custom);
   },
+//   created() {
+//     let url = ""
+//     this.App.check();
+//     this.App.getLinks().then(() => {
+//         this.App.links.forEach((link)=>{
+//             // console.log(link)
+//             if(this.$route.params.custom == link.customlinks) {
+//                 url = link.rawlinks
+//             }
+//         })
+//         console.log(url)
+//         window.location.href = url
+//     })
+//   },
 };
 </script>
