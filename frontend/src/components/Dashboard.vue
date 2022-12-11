@@ -112,82 +112,6 @@
     </div>
   </section>
 
-  <!-- Shorten Section -->
-  <section id="shortenIT" class="relative bg-blue-100">
-    <!-- Shorten Container -->
-    <div class="max-w-4xl mx-auto p-6 space-y-6">
-      <!-- Form -->
-      <form
-        id="link-form"
-        class="relative flex flex-col w-full p-10 -mt-20 space-y-4 bg-blue-500 rounded-lg md:flex-row md:space-y-0 md:space-x-3"
-      >
-        <input
-          type="url"
-          v-model="App.input.links.rawlinks"
-          class="flex-1 p-3 border-2 rounded-lg focus:outline-none"
-          placeholder="Input your link"
-          id="link-input"
-          required
-        />
-
-        <input
-          type="text"
-          v-model="App.input.links.customlinks"
-          class="flex-1 p-3 border-2 rounded-lg focus:outline-none"
-          placeholder="input your custom back-half"
-          id="link-input"
-        />
-
-        <button
-          type="submit"
-          @click="App.addLinks(App.input.links)"
-          class="px-10 py-3 text-white bg-blue-700 rounded-lg hover:bg-blue-700Light focus:outline-none md:py-2"
-        >
-          Shorten It!
-        </button>
-
-        <!-- Error Message -->
-        <div
-          id="err-msg"
-          class="absolute left-7 bottom-3 text-red text-sm italic"
-        ></div>
-      </form>
-
-      <!-- Link 1 -->
-      <div
-        v-for="link in App.links"
-        :key="link.id"
-        class="flex flex-col items-center justify-between w-full p-6 bg-white rounded-lg md:flex-row"
-      >
-        <p class="font-bold text-center text-veryDarkViolet md:text-left">
-          {{ link.rawlinks }}
-        </p>
-
-        <div
-          class="flex flex-col items-center justify-end flex-1 space-x-4 space-y-2 md:flex-row md:space-y-0"
-        >
-          <button
-            @click="
-              $router.push({
-                name: 'shorten',
-                params: { custom: link.customlinks },
-              })
-            "
-            class="font-bold text-cyan"
-          >
-            localhost:5173/{{ link.customlinks }}
-          </button>
-          <button
-            @click="$router.push({ name: 'edit', params: { id: link.id } })"
-            class="p-2 px-8 text-white bg-blue-700 rounded-lg hover:opacity-70 focus:outline-none"
-          >
-            Edit
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section id="about">
     <!-- Stats Section -->
     <section id="stats" class="py-24 bg-gray-100">
@@ -223,7 +147,11 @@
             <div
               class="flex items-center justify-center w-20 h-20 p-4 rounded-full bg-veryDarkViolet"
             >
-              <img src="../assets/images/icon-brand-recognition.svg" alt="" />
+              <div class="avatar">
+                <div class="w-[5.3rem] rounded-full">
+                  <img class="rounded-full" src="../assets/images/wisnu.png" />
+                </div>
+              </div>
             </div>
           </div>
           <h5
@@ -244,10 +172,10 @@
           <!-- Image Positioning -->
           <div class="absolute -ml-10 left-1/2 -top-10 md:left-16">
             <!-- Image Container For Background & Center -->
-            <div
-              class="flex items-center justify-center w-20 h-20 p-4 rounded-full bg-veryDarkViolet"
-            >
-              <img src="../assets/images/icon-detailed-records.svg" alt="" />
+            <div class="avatar">
+              <div class="w-20 rounded-full">
+                <img class="rounded-full" src="../assets/images/dzaki.png" />
+              </div>
             </div>
           </div>
           <h5
@@ -268,10 +196,10 @@
           <!-- Image Positioning -->
           <div class="absolute -ml-10 left-1/2 -top-10 md:left-16">
             <!-- Image Container For Background & Center -->
-            <div
-              class="flex items-center justify-center w-20 h-20 p-4 rounded-full bg-veryDarkViolet"
-            >
-              <img src="../assets/images/icon-fully-customizable.svg" alt="" />
+            <div class="avatar">
+              <div class="w-20 rounded-full">
+                <img class="rounded-full" src="../assets/images/rando.png" />
+              </div>
             </div>
           </div>
           <h5
@@ -291,16 +219,18 @@
   <section id="tech-stack">
     <section class="mt-32" id="download">
       <div class="container mx-auto px-6">
-        <h2 class="mb-6 text-8xl font-semibold text-center md:text-4xl">
+        <h2 class="mb-6 text-8xl font-bold text-center md:text-4xl">
           Tech Stack
         </h2>
-        <p class="max-w-lg text-2xl mx-auto text-center text-grayishBlue">
+        <p
+          class="max-w-lg text-2xl mx-auto font-medium text-center text-grayishBlue"
+        >
           The Frameworks we use for this website
         </p>
       </div>
     </section>
     <!-- Download Boxes -->
-    <section id="techs" class="py-32">
+    <section id="techs" class="pt-12 pb-20">
       <!-- Boxes Container -->
       <div
         class="relative flex flex-col items-center max-w-5xl mx-auto space-y-10 px-10 md:px-6 md:space-y-0 md:space-x-7 md:flex-row"
