@@ -5,7 +5,7 @@
     >
       <div class="bg-slate-50 rounded-md p-11 xl:w-4/12 lg:w-5/12 sm:w-6/12">
         <h1 class="font-bold text-2xl flex justify-center">Login</h1>
-        <h1 class="text-sm text-slate-400 mt-1 flex justify-center">
+        <h1 id="validation" class="text-sm text-slate-400 mt-1 flex justify-center">
           Please input your email and password
         </h1>
         <div class="mt-8 grid gap-3 grid-cols-1">
@@ -13,6 +13,7 @@
             <label for="email" class="font-semibold">Email</label>
             <input
               placeholder="Enter your email"
+              required
               type="text"
               v-model="App.email"
               class="h-9 border-slate-300 mt-1 rounded w-full bg-gray-50 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
@@ -22,6 +23,7 @@
             <label for="password" class="font-semibold">Password</label>
             <input
               placeholder="Enter your password"
+              required
               type="password"
               v-model="App.password"
               class="h-9 mt-1 border-slate-300 rounded w-full bg-gray-50 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"

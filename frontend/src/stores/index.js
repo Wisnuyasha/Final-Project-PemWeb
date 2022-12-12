@@ -43,31 +43,39 @@ export const useApp = defineStore({
           (response) => {
             if (response.data.code == "auth/invalid-email") {
               Swal.fire({
+                title: "Error!",
+                text: `Invalid Email `,
+                icon: "error",
+                timer: 1500,
+                showConfirmButton: false,
+              });
+              router.push("/")
+            }
+            else if(response.data.code == "auth/email-already-in-use") {
+              Swal.fire({
+                title: "Error!",
+                text: `Already in use`,
+                icon: "error",
+                timer: 1500,
+                showConfirmButton: false,
+              });
+              router.push("/")
+            }
+            else if (response.status) {
+              Swal.fire({
                 title: "Success!",
-                text: `Succesesfully added user ${email}`,
+                text: `Succesesfully login ${email}`,
                 icon: "success",
                 timer: 1500,
                 showConfirmButton: false,
               });
               router.push("/login");
-              document.getElementById('validation').innerHTML = "Invalid email format"
-            }
-            else if(response.data.code == "auth/email-already-in-use") {
-              Swal.fire({
-                title: "Error!",
-                text: `Seems like there is an error while adding ${email} ${error}`,
-                icon: "error",
-                timer: 1500,
-                showConfirmButton: false,
-              });
-              router.push("/register")
-              document.getElementById('validation').innerHTML = "Email is not available"
             }
           },
           (error) => {
             Swal.fire({
               title: "Error!",
-              text: `Seems like there is an error while adding ${email} ${error}`,
+              text: `Seems like there is an error while adding ${email}`,
               icon: "error",
               timer: 1500,
               showConfirmButton: false,
@@ -83,10 +91,61 @@ export const useApp = defineStore({
         })
         .then(
           (response) => {
-            // console.log(response);
+            console.log(response);
             const accountId = response.data;
             localStorage.setItem('userToken', accountId)
-            if (response.status) {
+            if(response.data.code == "auth/wrong-password") {
+              Swal.fire({
+                title: "Error!",
+                text: `Seems like there is an error while login `,
+                icon: "error",
+                timer: 1500,
+                showConfirmButton: false,
+              });
+              router.push("/login")
+              }
+              else if(response.data.code == "auth/user-not-found") {
+                Swal.fire({
+                  title: "Error!",
+                  text: `User not found`,
+                  icon: "error",
+                  timer: 1500,
+                  showConfirmButton: false,
+                });
+                router.push("/login")
+                }
+
+            else if(response.data.code == "auth/user-not-found") {
+            Swal.fire({
+              title: "Error!",
+              text: `User not found`,
+              icon: "error",
+              timer: 1500,
+              showConfirmButton: false,
+            });
+            router.push("/login")
+            }
+            else if(response.data.code == "auth/network-request-failed") {
+            Swal.fire({
+              title: "Error!",
+              text: `Seems like there is an error while login ${email} `,
+              icon: "error",
+              timer: 1500,
+              showConfirmButton: false,
+            });
+            router.push("/login")
+            }
+            else if(response.data.code == "auth/invalid-email") {
+            Swal.fire({
+              title: "Error!",
+              text: `Invalid Email`,
+              icon: "error",
+              timer: 1500,
+              showConfirmButton: false,
+            });
+            router.push("/login")
+            }
+            else if (response.status) {
               Swal.fire({
                 title: "Success!",
                 text: `Succesesfully login ${email}`,
@@ -96,56 +155,11 @@ export const useApp = defineStore({
               });
               router.push("/dashboard");
             }
-            else if(response.data.code == "auth/wrong-password") {
-            Swal.fire({
-              title: "Error!",
-              text: `Seems like there is an error while login ${email} ${error}`,
-              icon: "error",
-              timer: 1500,
-              showConfirmButton: false,
-            });
-            router.push("/login")
-            document.getElementById('validation').innerHTML = "Wrong password"
-            console.log(document.getElementById)
-            }
-            else if(response.data.code == "auth/user-not-found") {
-            Swal.fire({
-              title: "Error!",
-              text: `Seems like there is an error while login ${email} ${error}`,
-              icon: "error",
-              timer: 1500,
-              showConfirmButton: false,
-            });
-            router.push("/login")
-            document.getElementById('validation').innerHTML = "No registered email found"
-            }
-            else if(response.data.code == "auth/network-request-failed") {
-            Swal.fire({
-              title: "Error!",
-              text: `Seems like there is an error while login ${email} ${error}`,
-              icon: "error",
-              timer: 1500,
-              showConfirmButton: false,
-            });
-            router.push("/login")
-            document.getElementById('validation').innerHTML = "Wrong password"
-            }
-            else if(response.data.code == "auth/invalid-email") {
-            Swal.fire({
-              title: "Error!",
-              text: `Seems like there is an error while login ${email} ${error}`,
-              icon: "error",
-              timer: 1500,
-              showConfirmButton: false,
-            });
-            router.push("/login")
-            document.getElementById('validation').innerHTML = "Invalid email"
-            }
           },
           (error) => {
             Swal.fire({
               title: "Error!",
-              text: `Seems like there is an error while login ${email} ${error}`,
+              text: `Seems like there is an error while login ${email} `,
               icon: "error",
               timer: 1500,
               showConfirmButton: false,

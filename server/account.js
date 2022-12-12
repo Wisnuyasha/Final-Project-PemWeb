@@ -24,7 +24,7 @@ account.post("/api/register", async(req, res) => {
   catch(err)
   {
     console.log(err)
-    req.send(err)
+    res.send(err)
   }
 });
 
@@ -42,7 +42,7 @@ account.post("/api/login", async(req, res) => {
   catch(err)
   {
     console.log(err)
-    req.send(err)
+    res.send(err)
   }
 });
 
