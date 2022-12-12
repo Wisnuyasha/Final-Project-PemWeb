@@ -154,13 +154,6 @@ export const useApp = defineStore({
         );
     },
 
-    check() {
-      if (localStorage.getItem("userToken") != null) {
-        router.push("/home");
-      } else {
-        return;
-      }
-    },
 
     async logout() {
       const res = await axios.post("http://localhost:3000/api/logout").then(

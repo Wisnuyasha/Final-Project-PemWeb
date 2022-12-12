@@ -1,6 +1,6 @@
 <template>
 <div class="flex w-screen h-screen justify-center items-center">
-    <p>Redirecting you to {{App.links.rawlinks}}.....</p>
+    <p>Redirecting you to .....</p>
 </div>
 </template>
 

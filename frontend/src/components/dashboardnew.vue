@@ -142,7 +142,7 @@
     <div class="flex h-full w-full">
       <div class="flex w-full">
         <div class="w-full h-full flex flex-col bg-slate-100">
-          <div class="flex-row flex mt-16 ml-14 items-center">
+          <div class="flex-row flex mt-16 ml-14 items-center mb-10">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -161,9 +161,9 @@
           </div>
 
           <!-- Stats -->
-          <div class="flex flex-row w-full mt-8 space-x-4 justify-start ml-14">
+          <!-- <div class="flex flex-row w-full mt-8 space-x-4 justify-start ml-14"> -->
             <!-- Box 1 -->
-            <div
+            <!-- <div
               class="inline-block align-bottom bg-indigo-600 hover:bg-indigo-500 rounded-xl text-left overflow-hidden shadow transform transition-all mb-4 w-[39.3%] sm:my-8"
             >
               <div class="p-5">
@@ -196,10 +196,10 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
 
             <!-- Box 2 -->
-            <div
+            <!-- <div
               class="inline-block align-bottom bg-indigo-600 hover:bg-indigo-500 rounded-xl text-left overflow-hidden shadow transform transition-all mb-4 w-[39.3%] sm:my-8"
             >
               <div class="p-5">
@@ -231,7 +231,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
 
           <!-- Dashboard -->
           <div
