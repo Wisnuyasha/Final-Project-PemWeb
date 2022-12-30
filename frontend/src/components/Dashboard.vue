@@ -84,7 +84,7 @@
   <section id="hero">
     <!-- Hero Container -->
     <div
-      class="container flex flex-col-reverse mx-auto p-6 lg:flex-row font-rubik"
+      class="container flex flex-col-reverse mx-auto p-6 pb-0 lg:flex-row font-rubik"
     >
       <!-- Content Container -->
       <div class="flex flex-col space-y-10 mb-44 lg:mt-16 lg:w-1/2 xl:mb-52">
@@ -106,13 +106,16 @@
       </div>
 
       <!-- Image -->
-      <div class="mb-24 mx-auto md:w-180 lg:mb-0 lg:w-1/2">
+      <div class="mb-0 mx-auto md:w-180 lg:mb-0 lg:w-1/2">
         <img src="../assets/images/illustration-working.svg" alt="" />
       </div>
     </div>
   </section>
 
   <section id="about">
+    <div class="bg-gray-100">
+      <img src="../assets/images/wave (1).svg" alt="" />
+    </div>
     <!-- Stats Section -->
     <section id="stats" class="py-24 bg-gray-100">
       <div class="container mx-auto px-3">
@@ -217,7 +220,12 @@
   </section>
 
   <section id="tech-stack">
-    <section class="mt-32" id="download">
+    <div class="bg-white relative">
+      <div class="absolute">
+        <img src="../assets/images/wave.svg" alt="" />
+      </div>
+    </div>
+    <section class="mt-0" id="download">
       <div class="container mx-auto px-6">
         <h2 class="mb-6 text-8xl font-bold text-center md:text-4xl">
           Tech Stack

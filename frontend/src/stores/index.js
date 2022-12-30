@@ -1,11 +1,22 @@
 import { defineStore } from "pinia";
 import axios from "axios";
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, onSnapshot, query, where, doc } from "firebase/firestore";
+import {
+  getFirestore,
+  collection,
+  onSnapshot,
+  query,
+  where,
+  doc,
+} from "firebase/firestore";
 import Swal from "sweetalert2";
 import router from "/src/router";
-import 'firebase/compat/firestore';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import "firebase/compat/firestore";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCHkFCbUsFso03_CCXRBCCyqA0d3_LnItk",
@@ -19,6 +30,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+// deklrasi
 export const useApp = defineStore({
   id: "App",
   state: () => ({
@@ -30,7 +42,7 @@ export const useApp = defineStore({
       links: {},
       editlink: {},
     },
-    links: []
+    links: [],
   }),
   actions: {
     async register(email, password) {
@@ -49,9 +61,8 @@ export const useApp = defineStore({
                 timer: 1500,
                 showConfirmButton: false,
               });
-              router.push("/")
-            }
-            else if(response.data.code == "auth/email-already-in-use") {
+              router.push("/");
+            } else if (response.data.code == "auth/email-already-in-use") {
               Swal.fire({
                 title: "Error!",
                 text: `Already in use`,
@@ -59,9 +70,8 @@ export const useApp = defineStore({
                 timer: 1500,
                 showConfirmButton: false,
               });
-              router.push("/")
-            }
-            else if (response.status) {
+              router.push("/");
+            } else if (response.status) {
               Swal.fire({
                 title: "Success!",
                 text: `Succesesfully login ${email}`,
@@ -93,8 +103,8 @@ export const useApp = defineStore({
           (response) => {
             console.log(response);
             const accountId = response.data;
-            localStorage.setItem('userToken', accountId)
-            if(response.data.code == "auth/wrong-password") {
+            localStorage.setItem("userToken", accountId);
+            if (response.data.code == "auth/wrong-password") {
               Swal.fire({
                 title: "Error!",
                 text: `Seems like there is an error while login `,
@@ -102,50 +112,44 @@ export const useApp = defineStore({
                 timer: 1500,
                 showConfirmButton: false,
               });
-              router.push("/login")
-              }
-              else if(response.data.code == "auth/user-not-found") {
-                Swal.fire({
-                  title: "Error!",
-                  text: `User not found`,
-                  icon: "error",
-                  timer: 1500,
-                  showConfirmButton: false,
-                });
-                router.push("/login")
-                }
-
-            else if(response.data.code == "auth/user-not-found") {
-            Swal.fire({
-              title: "Error!",
-              text: `User not found`,
-              icon: "error",
-              timer: 1500,
-              showConfirmButton: false,
-            });
-            router.push("/login")
-            }
-            else if(response.data.code == "auth/network-request-failed") {
-            Swal.fire({
-              title: "Error!",
-              text: `Seems like there is an error while login ${email} `,
-              icon: "error",
-              timer: 1500,
-              showConfirmButton: false,
-            });
-            router.push("/login")
-            }
-            else if(response.data.code == "auth/invalid-email") {
-            Swal.fire({
-              title: "Error!",
-              text: `Invalid Email`,
-              icon: "error",
-              timer: 1500,
-              showConfirmButton: false,
-            });
-            router.push("/login")
-            }
-            else if (response.status) {
+              router.push("/login");
+            } else if (response.data.code == "auth/user-not-found") {
+              Swal.fire({
+                title: "Error!",
+                text: `User not found`,
+                icon: "error",
+                timer: 1500,
+                showConfirmButton: false,
+              });
+              router.push("/login");
+            } else if (response.data.code == "auth/user-not-found") {
+              Swal.fire({
+                title: "Error!",
+                text: `User not found`,
+                icon: "error",
+                timer: 1500,
+                showConfirmButton: false,
+              });
+              router.push("/login");
+            } else if (response.data.code == "auth/network-request-failed") {
+              Swal.fire({
+                title: "Error!",
+                text: `Seems like there is an error while login ${email} `,
+                icon: "error",
+                timer: 1500,
+                showConfirmButton: false,
+              });
+              router.push("/login");
+            } else if (response.data.code == "auth/invalid-email") {
+              Swal.fire({
+                title: "Error!",
+                text: `Invalid Email`,
+                icon: "error",
+                timer: 1500,
+                showConfirmButton: false,
+              });
+              router.push("/login");
+            } else if (response.status) {
               Swal.fire({
                 title: "Success!",
                 text: `Succesesfully login ${email}`,
@@ -167,7 +171,6 @@ export const useApp = defineStore({
           }
         );
     },
-
 
     async logout() {
       const res = await axios.post("http://localhost:3000/api/logout").then(
@@ -246,10 +249,10 @@ export const useApp = defineStore({
         })
         .then((response) => {
           console.log(response);
-          const links = response.data
-          this.links = []
-          this.links.push(...response.data)
-          console.log("berhasil")
+          const links = response.data;
+          this.links = [];
+          this.links.push(...response.data);
+          console.log("berhasil");
         })
         .catch((err) => {
           // console.log("gagal")
@@ -320,11 +323,11 @@ export const useApp = defineStore({
     },
 
     async check(url) {
-      const redLink = await axios.get("http://localhost:3000/api/redirectlink?url="+url)
-      .then((response)=>{
-          window.location.replace(response.data)
-      })
+      const redLink = await axios
+        .get("http://localhost:3000/api/redirectlink?url=" + url)
+        .then((response) => {
+          window.location.replace(response.data);
+        });
     },
-
   },
 });

@@ -5,7 +5,7 @@
       <div>
         <a
           href="#"
-          class="flex items-center pl-6 pt-5 pb-8 text-slate-50 bg-indigo-500"
+          class="flex items-center pl-6 pt-5 pb-8 text-slate-50 bg-indigo-600"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -161,9 +161,9 @@
           </div>
 
           <!-- Stats -->
-          <!-- <div class="flex flex-row w-full mt-8 space-x-4 justify-start ml-14"> -->
+          <div class="flex flex-row w-full mt-8 space-x-4 justify-start ml-14">
             <!-- Box 1 -->
-            <!-- <div
+            <div
               class="inline-block align-bottom bg-indigo-600 hover:bg-indigo-500 rounded-xl text-left overflow-hidden shadow transform transition-all mb-4 w-[39.3%] sm:my-8"
             >
               <div class="p-5">
@@ -196,10 +196,10 @@
                   </div>
                 </div>
               </div>
-            </div> -->
+            </div>
 
             <!-- Box 2 -->
-            <!-- <div
+            <div
               class="inline-block align-bottom bg-indigo-600 hover:bg-indigo-500 rounded-xl text-left overflow-hidden shadow transform transition-all mb-4 w-[39.3%] sm:my-8"
             >
               <div class="p-5">
@@ -231,7 +231,7 @@
                 </div>
               </div>
             </div>
-          </div> -->
+          </div>
 
           <!-- Dashboard -->
           <div
@@ -277,7 +277,7 @@
 
                   <label
                     for="email"
-                    class="font-semibold ml-[0.5rem] md:ml-[1rem] lg:ml-[2.9rem] xl:ml-[7rem] 2xl:ml-[6rem]"
+                    class="font-semibold ml-[0.5rem] md:ml-[1rem] lg:ml-[2.9rem] xl:ml-[7rem] 2xl:ml-[11.8rem]"
                     >Custom back-half</label
                   >
                 </div>
