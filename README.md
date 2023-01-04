@@ -13,7 +13,7 @@ A brief description of what this project does and who it's for
 
 ## Authors
 
-- [@treeoon](https://github.com/treeoon)
+- [@wisnuyasha](https://github.com/wisnuyasha)
 - [@dzakiruw](https://github.com/dzakiruw)
 - [@ranggaaldosas](https://github.com/ranggaaldosas)
 
